@@ -31,7 +31,11 @@ for i in range(len(result)):
     position_to_delete = b.find("|")
     c = b[0:position_to_delete-1]
     artist_and_name = c.split('—')
-    result[i].artist = artist_and_name[1]
-    result[i].song = artist_and_name[0]
+    try:
+        result[i].artist = artist_and_name[1]
+        result[i].song = artist_and_name[0]
+    except:
+        result[i].artist = i
+        result[i].song = i
 for e in result:
     print("Исполнитель: "+e.artist+" Название песни: "+e.song)
