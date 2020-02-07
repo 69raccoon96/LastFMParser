@@ -35,7 +35,7 @@ for i in range(len(links)):
     result.append(Songs(links[i]))
 for i in range(len(result)):
     current_soup = get_and_build_soup("https://last.fm"+result[i].link)
-    time.sleep(5)
+    time.sleep(3)
     title = current_soup.find("title").text
     position_to_delete = title.find("|")
     c = title[0:position_to_delete-1]
